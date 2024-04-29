@@ -15,13 +15,13 @@ logging.basicConfig(format='%(asctime)s - %(message)s',
 #### /print debug information to stdout
 
 #### Download scifact.zip dataset and unzip the dataset
-datasets = ["fiqa", "cquadupstack", "trec-covid" ,"scifact"]
+datasets = ["fiqa", "cqadupstack", "trec-covid" ,"scifact"]
 for dataset in datasets:
     url = "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/{}.zip".format(dataset)
     out_dir = os.path.join(pathlib.Path(__file__).parent.absolute(), "datasets")
     data_path = util.download_and_unzip(url, out_dir)
 
-#### Provide the data_path where scifact has been downloaded and unzipped
+"""#### Provide the data_path where scifact has been downloaded and unzipped
 corpus, queries, qrels = GenericDataLoader(data_folder=data_path).load(split="test")
 
 #### Load the SBERT model and retrieve using cosine-similarity
@@ -30,4 +30,4 @@ retriever = EvaluateRetrieval(model, score_function="dot") # or "cos_sim" for co
 results = retriever.retrieve(corpus, queries)
 
 #### Evaluate your model with NDCG@k, MAP@K, Recall@K and Precision@K  where k = [1,3,5,10,100,1000] 
-ndcg, _map, recall, precision = retriever.evaluate(qrels, results, retriever.k_values)
+ndcg, _map, recall, precision = retriever.evaluate(qrels, results, retriever.k_values)"""
