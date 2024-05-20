@@ -1,3 +1,13 @@
 /datasets/
 /generated/
 /generated-queries/
+/filtered/
+/filtered_generated_queries/
+/llm/
+/llm_generated_queries/
+/llm_generated_output/
+/results/
+generated.zip
+train.jsonl
+/full/
+.env
